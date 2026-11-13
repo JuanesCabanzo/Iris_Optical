@@ -8,17 +8,7 @@ import modelo.Conexion;
 import modelo.Paciente;
 import modelo.PacienteDAO;
 
-/**
- * Controlador del módulo de pacientes.
- *
- * Valida y normaliza los datos que llegan desde la vista, aplica las reglas
- * del módulo y delega el acceso a datos en PacienteDAO. No muestra ventanas:
- * comunica los problemas mediante excepciones con mensajes comprensibles,
- * y la vista decide cómo presentarlos.
- *
- *  - IllegalArgumentException: los datos ingresados no son válidos.
- *  - IllegalStateException: la operación no pudo completarse en la base de datos.
- */
+
 public class CtrlPaciente {
 
     private static final String PATRON_CORREO = "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$";
@@ -26,7 +16,7 @@ public class CtrlPaciente {
 
     private final PacienteDAO dao = new PacienteDAO();
 
-    // ---------- CONSULTAS ----------
+    //  CONSULTAS 
     public List<Paciente> listarTodos() {
 
         List<Paciente> lista = dao.listarTodos();
@@ -66,7 +56,7 @@ public class CtrlPaciente {
         return Conexion.estaDisponible();
     }
 
-    // ---------- OPERACIONES ----------
+    //  OPERACIONES 
     public void registrar(Paciente paciente) {
 
         validar(paciente);
@@ -111,7 +101,7 @@ public class CtrlPaciente {
         }
     }
 
-    // ---------- REGLAS ----------
+    // REGLAS
     /** Calcula la edad en años cumplidos a partir de la fecha de nacimiento. */
     public static int calcularEdad(Date fechaNacimiento) {
         return Period.between(fechaNacimiento.toLocalDate(),
