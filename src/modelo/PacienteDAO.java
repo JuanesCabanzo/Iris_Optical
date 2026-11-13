@@ -8,16 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Acceso a datos de la tabla Paciente.
- *
- * Las operaciones conservan su firma original. Cuando una operación falla,
- * el motivo técnico queda disponible en getUltimoError() para que el
- * controlador pueda explicarlo al usuario con un mensaje claro.
- */
+
 public class PacienteDAO {
 
-    // Motivo del último error ocurrido en el hilo actual (null = sin error).
+   
     private final ThreadLocal<String> ultimoError = new ThreadLocal<>();
 
     public String getUltimoError() {
