@@ -15,19 +15,13 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import modelo.Paciente;
 
-/**
- * Módulo de pacientes: listado con búsqueda en vivo y formulario lateral
- * para registrar, consultar, actualizar y eliminar.
- *
- * Es una vista: no contiene reglas de negocio. Toda validación y acceso a
- * datos pasa por CtrlPaciente.
- */
+
 public class PanelPacientes extends JPanel {
 
     private final CtrlPaciente controlador = new CtrlPaciente();
     private final Estilo.Aviso aviso = new Estilo.Aviso();
 
-    // ----- listado -----
+    // listado 
     private final Estilo.Campo txtBuscar = new Estilo.Campo(
             "Buscar por nombre, apellido, cédula, teléfono o correo");
     private final DefaultTableModel modelo = new DefaultTableModel(
@@ -55,7 +49,7 @@ public class PanelPacientes extends JPanel {
     private int solicitudActual = 0;
     private boolean actualizandoTabla = false;
 
-    // ----- formulario -----
+    //  formulario 
     private final Estilo.Campo txtNombre1 = new Estilo.Campo("Ej. María");
     private final Estilo.Campo txtNombre2 = new Estilo.Campo("Opcional");
     private final Estilo.Campo txtApellido1 = new Estilo.Campo("Ej. Gómez");
@@ -139,9 +133,9 @@ public class PanelPacientes extends JPanel {
         cargarTabla("", 0);
     }
 
-    // =====================================================================
+   
     //  CONSTRUCCIÓN DE LA INTERFAZ
-    // =====================================================================
+   
     private JComponent construirEncabezado() {
 
         JPanel titulos = new JPanel();
@@ -374,10 +368,10 @@ public class PanelPacientes extends JPanel {
         contenedor.add(der, c);
     }
 
-    // =====================================================================
+    
     //  LISTADO
-    // =====================================================================
-    /** Recarga el listado conservando el filtro de búsqueda. */
+  
+
     public void refrescar() {
         cargarTabla(txtBuscar.getText(), idActual);
     }
@@ -423,7 +417,7 @@ public class PanelPacientes extends JPanel {
         actualizandoTabla = true;
         tabla.clearSelection();
 
-        // se retira el ordenador mientras se rellena; se conserva el orden elegido
+        
         java.util.List<? extends RowSorter.SortKey> orden = sorter.getSortKeys();
         tabla.setRowSorter(null);
         modelo.setRowCount(0);
@@ -474,9 +468,9 @@ public class PanelPacientes extends JPanel {
         }
     }
 
-    // =====================================================================
+ 
     //  FORMULARIO
-    // =====================================================================
+    
     private void nuevo(boolean enfocar) {
 
         idActual = 0;
@@ -566,9 +560,9 @@ public class PanelPacientes extends JPanel {
         }
     }
 
-    // =====================================================================
+    
     //  ACCIONES
-    // =====================================================================
+ 
     private void guardar() {
 
         try {
@@ -723,9 +717,9 @@ public class PanelPacientes extends JPanel {
         }
     }
 
-    // =====================================================================
+   
     //  UTILIDADES
-    // =====================================================================
+    
     private String nz(String valor) {
         return valor == null ? "" : valor;
     }
