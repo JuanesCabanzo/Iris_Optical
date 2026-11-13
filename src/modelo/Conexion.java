@@ -10,14 +10,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import javax.swing.JOptionPane;
 
-/**
- * Establece la conexión JDBC con MySQL.
- *
- * Por defecto usa la configuración local del proyecto. Si junto a la
- * aplicación existe un archivo "db.properties", sus valores tienen prioridad
- * (db.url, db.user, db.password). Así cada persona que descargue el
- * repositorio puede usar su propia contraseña sin modificar el código.
- */
+
 public class Conexion {
 
     private static final String URL_POR_DEFECTO
@@ -54,10 +47,7 @@ public class Conexion {
                 CONFIG.getProperty("db.password", PASSWORD_POR_DEFECTO));
     }
 
-    /**
-     * Comprueba la conexión sin mostrar ventanas. Se usa para el indicador
-     * de estado de la interfaz.
-     */
+    
     public static boolean estaDisponible() {
 
         try (Connection con = getConnection()) {
