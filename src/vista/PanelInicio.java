@@ -9,11 +9,7 @@ import java.util.Locale;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-/**
- * Pantalla de inicio: saludo, indicadores reales del sistema, accesos
- * rápidos y estado de los módulos. Solo muestra información que existe:
- * el conteo de pacientes y el estado de la conexión salen de MySQL.
- */
+
 public class PanelInicio extends JPanel {
 
     private final CtrlPaciente controlador = new CtrlPaciente();
