@@ -1,0 +1,5 @@
+# Copia este archivo como "db.properties" (junto al .jar o en la raíz del
+# proyecto) y ajusta tus datos. db.properties NO se sube a GitHub.
+db.url=jdbc:mysql://localhost:3306/sistema_iris_v2?useSSL=false&serverTimezone=UTC&connectTimeout=5000
+db.user=root
+db.password=TU_CONTRASEÑA
