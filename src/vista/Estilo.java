@@ -14,17 +14,13 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
-/**
- * Identidad visual de IRIS OPTICAL para la aplicación de escritorio.
- * Reúne la paleta de colores (la misma de la página web), las fuentes y los
- * componentes Swing personalizados que utilizan todas las vistas.
- */
+
 public final class Estilo {
 
     private Estilo() {
     }
 
-    // ---------- PALETA (coincide con style.css de la web) ----------
+    // PALETA 
     public static final Color NAVY = new Color(0x071c33);
     public static final Color NAVY2 = new Color(0x0c3b64);
     public static final Color ACCENT = new Color(0x1e88e5);
@@ -41,7 +37,7 @@ public final class Estilo {
     public static final Color ROJO = new Color(0xc62828);
     public static final Color PROXIMO = new Color(0xb7791f);
 
-    // ---------- FUENTES ----------
+    // FUENTES 
     private static final String FAMILIA = elegirFamilia();
 
     private static String elegirFamilia() {
@@ -79,7 +75,7 @@ public final class Estilo {
         return l;
     }
 
-    // ---------- LOGO (mismo diseño del logo SVG de la web) ----------
+    // LOGO 
     public static void dibujarLogo(Graphics2D g2, int x, int y, int d) {
         double s = d / 200.0;
         g2.translate(x, y);
@@ -126,9 +122,7 @@ public final class Estilo {
         return img;
     }
 
-    // =====================================================================
-    //  TARJETA: panel blanco con esquinas redondeadas
-    // =====================================================================
+
     public static class Tarjeta extends JPanel {
 
         public Tarjeta(LayoutManager layout) {
@@ -154,9 +148,9 @@ public final class Estilo {
         }
     }
 
-    // =====================================================================
+   
     //  BOTÓN
-    // =====================================================================
+    
     public enum Tipo {
         PRIMARIO, SECUNDARIO, PELIGRO, PELIGRO_SOLIDO
     }
@@ -243,9 +237,7 @@ public final class Estilo {
         }
     }
 
-    // =====================================================================
-    //  CAMPO DE TEXTO con sugerencia (placeholder) y estado de error
-    // =====================================================================
+
     public static class Campo extends JTextField {
 
         private final String sugerencia;
@@ -335,9 +327,9 @@ public final class Estilo {
         }
     }
 
-    // =====================================================================
+
     //  SELECTOR SEGMENTADO (para el sexo: M / F / Otro)
-    // =====================================================================
+  
     public static class Segmentado extends JPanel {
 
         private final ButtonGroup grupo = new ButtonGroup();
@@ -423,9 +415,9 @@ public final class Estilo {
         }
     }
 
-    // =====================================================================
+  
     //  AVISO: franja de mensajes (éxito, error, información)
-    // =====================================================================
+
     public enum Nivel {
         EXITO, ERROR, INFO
     }
@@ -503,9 +495,9 @@ public final class Estilo {
         }
     }
 
-    // =====================================================================
+    
     //  BARRA DE DESPLAZAMIENTO delgada
-    // =====================================================================
+ 
     public static class BarraFina extends BasicScrollBarUI {
 
         @Override
@@ -562,9 +554,9 @@ public final class Estilo {
         return sp;
     }
 
-    // =====================================================================
-    //  DIÁLOGO DE CONFIRMACIÓN con el mismo estilo de la aplicación
-    // =====================================================================
+  
+    //  DIÁLOGO DE CONFIRMACIÓN 
+
     public static boolean confirmar(Window padre, String titulo,
             String mensaje, String textoConfirmar, boolean peligro) {
 
