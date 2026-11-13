@@ -7,14 +7,7 @@ import java.awt.geom.RoundRectangle2D;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-/**
- * Menú lateral de IRIS OPTICAL: marca, navegación entre módulos y estado
- * de la conexión con la base de datos.
- *
- * Los módulos todavía no desarrollados aparecen deshabilitados bajo el
- * encabezado "PRÓXIMAMENTE", de modo que la plataforma muestra su dirección
- * sin aparentar funciones que aún no existen.
- */
+
 public class BarraLateral extends JPanel {
 
     private final ItemMenu itemInicio = new ItemMenu("Inicio", Icono.INICIO, false);
@@ -139,9 +132,6 @@ public class BarraLateral extends JPanel {
         }
     }
 
-    // =====================================================================
-    //  ELEMENTO DEL MENÚ
-    // =====================================================================
     private enum Icono {
         INICIO, PACIENTE, OJO, DOCUMENTO
     }
