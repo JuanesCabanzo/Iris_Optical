@@ -1,6 +1,5 @@
-// IRIS OPTICAL - JavaScript sencillo
 
-// 1. Cambio de idioma Español / English
+//  Cambio de idioma Español / English
 var translated = false;
 var btn = document.getElementById("translateBtn");
 
@@ -17,7 +16,7 @@ btn.addEventListener("click", function () {
   translated = !translated;
 });
 
-// 2. Aparición suave de secciones al hacer scroll
+//   Scroll
 var reveals = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
   var obs = new IntersectionObserver(function (entries) {
@@ -30,7 +29,7 @@ if ("IntersectionObserver" in window) {
   reveals.forEach(function (r) { r.classList.add("visible"); });
 }
 
-// 3. Pestañas de documentación (el PDF se carga al abrir cada pestaña)
+// Pestañas documentación 
 var tabs = document.querySelectorAll(".tab");
 var panels = document.querySelectorAll(".panel");
 function abrirPestana(nombre) {
@@ -46,7 +45,7 @@ function abrirPestana(nombre) {
 tabs.forEach(function (t) { t.addEventListener("click", function () { abrirPestana(t.dataset.tab); }); });
 if (tabs.length) { abrirPestana("ieee"); }
 
-// 4. Visor para ampliar imágenes
+//  Visor para ampliar imágenes
 var lb = document.createElement("div");
 lb.className = "lb";
 lb.innerHTML = '<button class="x" type="button" aria-label="Cerrar">&times;</button><button class="pv" type="button" aria-label="Anterior">&#8249;</button><img alt=""><p></p><button class="nx" type="button" aria-label="Siguiente">&#8250;</button>';
